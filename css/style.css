@@ -19,9 +19,9 @@
 }
 html {
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
+  /* margin-right: -15px; */
 }
-
 /* custom scroll bar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -526,7 +526,6 @@ section {
   background: #111;
 }
 .wrapper{
-  width: 100%;
   display: flex;
 }
 .wrapper .card {
@@ -604,14 +603,21 @@ footer span a:hover{
   text-decoration: underline;
 }
 /* responsive media query */
+
 @media (max-width: 1073px){
   .wrapper{
     display: block;
+    width: 100%;
   }
   .wrapper .card{
     width: 100%;
     float: left;
     margin-left: 0;
+  }
+}
+@media (max-width: 300px){
+  .wrapper{
+    display:block;
   }
 }
 @media (max-width: 1200px) {
