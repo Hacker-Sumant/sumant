@@ -1,15 +1,15 @@
 /*  import google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 
 * {
   margin: 0;
@@ -79,6 +79,7 @@ section .title::after {
 .navbar.sticky {
   background: crimson;
   padding: 10px 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 .max-width {
   max-width: 1300px;
@@ -127,6 +128,40 @@ section .title::after {
   cursor: pointer;
   display: none;
 }
+.menu-btn{
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+.scroll-up-btn{
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: crimson;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-up-btn:hover{
+  filter: brightness(90%);
+}
+
 
 /* home section style */
 .home {
@@ -208,70 +243,75 @@ section {
   padding: 100px 0;
 }
 /* about section styling */
-.about{
-    font-family: 'Poppins', sans-serif; 
-    background: url(../images/Abract01.png);
-    background-position-x:right;
-    background-repeat: no-repeat;
+.about {
+  font-family: "Poppins", sans-serif;
+  background: url(../images/Abract01.png);
+  background-position-x: right;
+  background-repeat: no-repeat;
 }
-.about .title::after{
-    content: "who i am";
+.about .title::after {
+  content: "who i am";
 }
-.about .about-content .left{
-    width: 45%;
+.about .about-content .left {
+  width: 45%;
 }
-.about .about-content .left img{
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 6px solid #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+.about .about-content .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
-.about .about-content{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+.about .about-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
-.about .about-content .right{
-    width: 55%;
+.about .about-content .right {
+  width: 55%;
 }
-.about .about-content .right .text{
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 10px;
+.about .about-content .right .text {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
-.about .about-content .right .text span{
-    color: crimson;
+.about .about-content .right .text span {
+  color: crimson;
 }
-.about .about-content .right p{
-    text-align: justify;
+.about .about-content .right p {
+  text-align: justify;
 }
-.about .about-content .right a{
-    display: inline-block;
-    background: crimson;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 10px 30px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid crimson;
-    transition: all 0.3s ease;
+.about .about-content .right a {
+  display: inline-block;
+  background: crimson;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
 }
 /* contact form style */
 .contact {
   z-index: -99999999;
-  background: linear-gradient(90deg, #04a7f4 50%, #f7f0a2 50%);
+  background: linear-gradient(
+    90deg,
+    rgba(4, 169, 246, 0.2) 50%,
+    rgba(247, 240, 162, 0.2) 50%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: 'poppins';  
-  mix-blend-mode: multiply;
+  font-family: "poppins";
 }
-.contact .title::after{
+.contact .title::after {
   content: "get in touch";
 }
 .container {
@@ -297,7 +337,7 @@ section {
   justify-content: space-between;
   box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
-  font-family: 'poppins', sans-serif;  
+  font-family: "poppins", sans-serif;
 }
 .container .contact_Info h2 {
   color: #fff;
@@ -393,130 +433,253 @@ section {
   flex-wrap: wrap;
   padding-top: 30px;
 }
-.container .contact_Form .formBox .inputBox{
-    position: relative;
-    margin-bottom: 35px;
+.container .contact_Form .formBox .inputBox {
+  position: relative;
+  margin-bottom: 35px;
 }
-.container .contact_Form .formBox .inputBox.w50{
-    width: 47%;
+.container .contact_Form .formBox .inputBox.w50 {
+  width: 47%;
 }
-.container .contact_Form .formBox .inputBox.w100{
-    width: 100%;
+.container .contact_Form .formBox .inputBox.w100 {
+  width: 100%;
 }
 .container .contact_Form .formBox .inputBox input,
-.container .contact_Form .formBox .inputBox textarea
-{
-    width: 100%;
-    resize: none;
-    padding: 5px 0;
-    font-size: 18px;
-    font-weight: 300;
-    color: #333;
-    border: none;
-    outline: none; 
-    border-bottom: 1px solid #777;
+.container .contact_Form .formBox .inputBox textarea {
+  width: 100%;
+  resize: none;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #333;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #777;
 }
-.container .contact_Form .formBox .inputBox textarea
-{
-    height:100px;
+.container .contact_Form .formBox .inputBox textarea {
+  height: 100px;
 }
-.container .contact_Form .formBox .inputBox textarea span{
-    margin-top: 45px;
+.container .contact_Form .formBox .inputBox textarea span {
+  margin-top: 45px;
 }
-.container .contact_Form .formBox .inputBox span{
-    position: absolute;
-    left: 0;
-    padding: 5px 0;
-    font-size: 18px ;
-    pointer-events: none;
-    font-weight: 300;
-    transition: 0.3s all ease-in-out;
+.container .contact_Form .formBox .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 18px;
+  pointer-events: none;
+  font-weight: 300;
+  transition: 0.3s all ease-in-out;
 }
 .container .contact_Form .formBox .inputBox input:focus ~ span,
 .container .contact_Form .formBox .inputBox input:valid ~ span,
 .container .contact_Form .formBox .inputBox textarea:focus ~ span,
-.container .contact_Form .formBox .inputBox textarea:valid ~ span{
-    transform: translateY(-25px);
-    color: #f7497d;
-    font-size: 16px;
+.container .contact_Form .formBox .inputBox textarea:valid ~ span {
+  transform: translateY(-25px);
+  color: #f7497d;
+  font-size: 16px;
 }
-.container .contact_Form .formBox .inputBox input[type="submit"]{
-    position: relative;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: crimson;
-    max-width: 150px;
-    padding: 12px;
-    color: #fff;
-    border-radius: 2px;
-    transition: 0.4s ;
-    border: 2px solid transparent;
-  }
-  .container .contact_Form .formBox .inputBox input[type="submit"]:hover{
-    background: none;
-    border: 2px solid crimson;
-    color: crimson;
+.container .contact_Form .formBox .inputBox input[type="submit"] {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: crimson;
+  max-width: 150px;
+  padding: 12px;
+  color: #fff;
+  border-radius: 2px;
+  transition: 0.4s;
+  border: 2px solid transparent;
+}
+.container .contact_Form .formBox .inputBox input[type="submit"]:hover {
+  background: none;
+  border: 2px solid crimson;
+  color: crimson;
+}
+
+/* skill style */
+.skill .max-width .title::after {
+  content: "what i know";
+  color: crimson;
+  background: #111;
+}
+.skill .max-width .title::before {
+  background: rgb(255, 255, 255);
+}
+.skill .max-width .title {
+  color: #fff;
+}
+#skill > div > div > div > div:nth-child(1) > div.circle > div.box > span {
+  font-family: poppins;
+}
+#skill > div > div > div > div.card.js > div.circle > div.box > span {
+  font-family: poppins;
+}
+#skill > div > div > div > div.card.react > div.circle > div.box > span {
+  font-family: poppins;
+}
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Quicksand;
+  background: #111;
+}
+.wrapper {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .card {
+  background: rgb(255, 255, 255, 0.1);
+  width: calc(33% - 20px);
+  height: 300px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.4s ease;
+}
+.wrapper .card:hover{
+  background: rgba(220, 20, 60, 0.194);
+}
+.wrapper .card .circle {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  cursor: default;
+}
+.card .circle .box,
+.card .circle .box span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.card .circle .box {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.2s;
+}
+.card .circle:hover .box {
+  transform: translate(-50%, -50%) scale(0.91);
+}
+.card .circle .box span,
+.wrapper .card .text {
+  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.circle .box span {
+  font-size: 38px;
+  font-family: sans-serif;
+  font-weight: 600;
+  transform: translate(-45%, -45%);
+  transition: all 0.1s;
+}
+.card .circle:hover .box span {
+  transform: translate(-45%, -45%) scale(1.09);
+}
+.card .text {
+  font-size: 20px;
+  font-weight: 600;
+}
+/* footer styleing */
+footer{
+  font-family: poppins;
+  background: #111;
+  text-align: center;
+  padding: 20px 23px;color: #fff;
+}
+footer span a{
+  color: crimson;
+}
+footer span a:hover{
+  text-decoration: underline;
 }
 /* responsive media query */
+@media (max-width: 753px) {
+  .wrapper {
+    max-width: 700px;
+  }
+  .wrapper .card {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 733px) {
+  .wrapper {
+    max-width: 500px;
+  }
+  .wrapper .card {
+    width: 100%;
+  }
+}
 @media (max-width: 1200px) {
-    .container{
-        width: 90%;
-        min-width: auto;
-        margin: 20px;
-        box-shadow:  0 20px 50px rgba(0, 0, 0, 0.25);
-    }
-    .container .contact_Info{
-        top: 0;
-        height: 550px;
-        position: relative;
-        box-shadow: none;
-        border-radius: 0;
-    }
-    .container .contact_Form{
-        position: relative;
-        width: calc(100% - 350px);
-        box-shadow: none;
-        margin-left: 0;
-        padding-left: 0;
-        border-radius: 0;
-        padding: 40px;
-        height: 550px;
-    }
+  .container {
+    width: 90%;
+    min-width: auto;
+    margin: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  }
+  .container .contact_Info {
+    top: 0;
+    height: 550px;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .container .contact_Form {
+    position: relative;
+    width: calc(100% - 350px);
+    box-shadow: none;
+    margin-left: 0;
+    padding-left: 0;
+    border-radius: 0;
+    padding: 40px;
+    height: 550px;
+  }
 }
 @media (max-width: 991px) {
-    .container{
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    .container .contact_Info{
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-    }
-    .container .contact_Info ul.sci{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .container .contact_Form{
-        width: 100%;
-        height: auto;
-    }
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .container .contact_Info {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+  }
+  .container .contact_Info ul.sci {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .contact_Form {
+    width: 100%;
+    height: auto;
+  }
 }
 @media (max-width: 600px) {
-    .container .contact_Form{
-        padding: 25px;
-    }
-    .container .contact_Info{
-        padding: 25px;
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .container .contact_Form .formBox .inputBox.w50{
-        width: 100%;
-    }
+  .container .contact_Form {
+    padding: 25px;
+  }
+  .container .contact_Info {
+    padding: 25px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .container .contact_Form .formBox .inputBox.w50 {
+    width: 100%;
+  }
 }
 @media (max-width: 991px) {
   .max-width {
@@ -539,7 +702,7 @@ section {
     top: 0;
     backdrop-filter: blur(10px);
     text-align: center;
-    padding-top: 80px;
+    padding-top: 130px;
     transition: all 0.3s ease;
   }
   .navbar .menu li {
@@ -555,7 +718,7 @@ section {
     margin-left: -110%;
     transition: 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  .navbar .menu.active li a{
+  .navbar .menu.active li a {
     margin-left: 0;
   }
   .menu-btn {
@@ -626,8 +789,8 @@ section {
   .home .home-content .img-1 img {
     margin-left: 40px;
   }
-  .about .about-content .left img{
-      width:260px;
-      height:260px;
+  .about .about-content .left img {
+    width: 260px;
+    height: 260px;
   }
 }

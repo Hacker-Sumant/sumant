@@ -35,14 +35,14 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+        strings: ["Developer", "Blogger", "Designer", "Hacker"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+        strings: ["Developer", "Blogger", "Designer", "Hacker"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -70,3 +70,19 @@ $(document).ready(function(){
         }
     });
 });
+let options = {
+    startAngle: -1.55,
+    size: 150,
+    value: 0.85,
+    fill: {gradient: ['#a445b2', '#fa4299']},
+  }
+  $(".circle .bar").circleProgress(options).on('circle-animation-progress',
+  function(event, progress, stepValue){
+    $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
+  });
+  $(".js .bar").circleProgress({
+    value: 0.70
+  });
+  $(".react .bar").circleProgress({
+    value: 0.60
+  });
