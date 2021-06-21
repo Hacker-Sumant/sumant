@@ -457,6 +457,7 @@ section {
 }
 .container .contact_Form .formBox .inputBox textarea {
   height: 100px;
+  font-family: poppins;
 }
 .container .contact_Form .formBox .inputBox textarea span {
   margin-top: 45px;
